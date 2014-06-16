@@ -1,0 +1,332 @@
+/*Red Unicorn Data Application v1.2
+Code by Charles Wentzel
+For Exclusive Use of Red Unicorn Traders Investment Club and its Current Members
+Version 1.2 - Functional Demo (major functions operational, working on adding depth and styling)
+Project Initiated: May 10, 2014
+Last Updated: June 10, 2014*/
+
+#instructions{
+    font-size: 12px;
+    font-family: Arial;
+    border: 2px solid;
+    padding: 3px;
+    background-color: #DCDCDC;
+    width: 1000px;
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    left: 0px;    
+}
+
+#AddCompanyContainer {
+    font-size: 12px;
+    font-family: Arial;
+    border: 2px solid;
+    padding: 3px;
+    background-color: #DCDCDC;
+    width: 1000px;
+    height: 150px;
+    position: absolute;
+    top: 60px;
+    left: 0px;    
+}
+
+#AddCompanyInputContainer{
+    font-size: inherit;
+    font-family: inherit;
+    position: absolute;
+    top: 20%;
+    left: 2%;
+}
+
+#SelectFieldsContainer{
+    font-size: inherit;
+    font-family: inherit;
+    padding: 3px;
+    background-color: #DCDCDC;
+    width: 755px;
+    height: 125px;
+    position: absolute;
+    top: 0px;
+    left: 22%;
+    word-wrap: break-word;
+}
+
+#SelectFields{
+    font-size: inherit;
+    font-family: inherit;
+    border: 1px solid;
+    padding: 2px;
+    background-color: #DCDCDC;
+    width: 755px;
+    height: 120px;
+    top: 0px;
+    left: 0px;
+    display: inline-block;
+    overflow-y: scroll;
+    position: relative;
+}
+
+#TableContainer{
+    font-size: inherit;
+    font-family: inherit;
+    border: 2px solid;
+    padding: 3px;
+    background-color: #DCDCDC;
+    width: 1000px;
+    min-height: 400px;
+    position: absolute;
+    top: 220px;
+    left: 0px;
+    overflow: auto;
+}
+
+#fieldsColumn1{
+    border: 1px solid;
+    width: 32%;
+    height: auto;
+    display: inline-block;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0%        
+}
+
+#fieldsColumn2{
+    border: 1px solid;
+    width: 32%;
+    height: auto;
+    display: inline-block;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 33%        
+}
+
+#fieldsColumn3{
+    border: 1px solid;
+    width: 32%;
+    height: auto;
+    display: inline-block;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 66%        
+}
+
+.fieldContainer{
+    border: 0.5px inset;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.fieldContainer:hover{
+    overflow: visible;
+    white-space: normal;
+    word-break: break-all;
+}
+
+#BuildTableBtn{
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 3px;
+    width: 70px;
+    height: 25px;
+    line-height: 12px;
+    background-color: #01DF01;
+    text-align: center;
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#TableLabel{
+    padding: 3px;
+    background-color: #DCDCDC;
+    width: 50px;
+    height: 15px;
+    position: absolute;
+    top: 5px;
+    left: 65px;
+}
+
+/*#DataTable{
+    position: absolute;
+    top: 35px;
+    left: 3px;
+    min-height: 50px;
+    border-collapse: separate;
+    width: auto;
+    min-width: 100px;
+}*/
+
+#DataTable {
+    margin:0px;
+    padding:0px;
+    width:100%;
+    box-shadow: 10px 10px 5px #888888;
+    border:1px solid #3f7f00;
+    -moz-border-radius-bottomleft:7px;
+    -webkit-border-bottom-left-radius:7px;
+    border-bottom-left-radius:7px;
+    -moz-border-radius-bottomright:7px;
+    -webkit-border-bottom-right-radius:7px;
+    border-bottom-right-radius:7px;
+    -moz-border-radius-topright:7px;
+    -webkit-border-top-right-radius:7px;
+    border-top-right-radius:7px;
+    -moz-border-radius-topleft:7px;
+    -webkit-border-top-left-radius:7px;
+    border-top-left-radius:7px;
+}
+
+#DataTable table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width:100%;
+    height:100%;
+    margin:0px;
+    padding:0px;
+}
+
+#DataTable tr:last-child td:last-child {
+    -moz-border-radius:7px;
+    -webkit-border-radius:7px;
+    border-radius:7px;
+}
+
+#DataTable tr:hover td{
+    background-color:#e5e5e5;
+}
+
+#DataTable td{
+    vertical-align: middle;
+    background-color: #d4ffaa;
+    border: 1px solid #3f7f00;
+    border-width: 0px 1px 1px 0px;
+    text-align: left;
+    padding: 5px;
+    font-size: 12px;
+    font-family: Arial;
+    font-weight: normal;
+    color: #000000;
+}
+
+#DataTable tr:last-child td{
+	border-width:0px 1px 0px 0px;
+}
+
+#DataTable tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}
+
+#DataTable tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+
+#DataTable tr:first-child td{
+	background:-o-linear-gradient(bottom, #5fbf00 5%, #3f7f00 100%);
+        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5fbf00), color-stop(1, #3f7f00) );
+	background:-moz-linear-gradient( center top, #5fbf00 5%, #3f7f00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#5fbf00", endColorstr="#3f7f00");
+        background: -o-linear-gradient(top,#5fbf00,3f7f00);
+	background-color:#5fbf00;
+	border:0px solid #3f7f00;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:12px;
+	font-family:Arial;
+	font-weight:bold;
+	color:#ffffff;
+}
+
+#DataTable tr:first-child:hover td{
+	background:-o-linear-gradient(bottom, #5fbf00 5%, #3f7f00 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5fbf00), color-stop(1, #3f7f00) );
+	background:-moz-linear-gradient( center top, #5fbf00 5%, #3f7f00 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#5fbf00", endColorstr="#3f7f00");	background: -o-linear-gradient(top,#5fbf00,3f7f00);
+
+	background-color:#5fbf00;
+}
+
+#DataTable tr:first-child td:first-child{
+	border-width:0px 0px 1px 0px;
+}
+
+#DataTable tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
+}
+
+/*.datacell{
+    border: 1px solid;
+    text-align: center;
+    vertical-align: middle;
+}*/
+
+/*#HeaderRow{
+    height: 20px;
+}*/
+
+/*th:not(#hdr_ctrl){
+    border: 1px solid;
+    text-align: center;
+    vertical-align: middle;
+    text-align: right;
+    width: auto;
+    padding-left: 10px;
+}*/
+    
+.hidediv{
+    cursor: pointer;
+    color: #FF0000;
+}
+
+#hdr_ctrl{
+}
+
+.ctrlcell{
+   width: 10px;
+}
+
+.SortCont{
+}
+
+.Sortup{
+    font-size: 10px;
+    height: 9px;
+    position: absolute;
+    top: 3px;
+    cursor: pointer;
+   
+}
+.Sortdown{
+    font-size: 10px;
+    height: 9px;
+    position: absolute;
+    top: 13px;
+    cursor: pointer;
+}
+
+.ui-autocomplete {
+    font-size: 12px;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+.ui-autocomplete-input{
+  }  
+
+ul.ui-autocomplete.ui-menu
+    {font-size: 11px;}
+  
+* html .ui-autocomplete {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+#symbols{
+}

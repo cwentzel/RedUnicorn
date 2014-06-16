@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--Red Unicorn Data Application v1.2
+Code by Charles Wentzel
+For Exclusive Use of Red Unicorn Traders Investment Club and its Current Members
+Version 1.2 - Functional Demo
+Project Initiated: May 10, 2014
+Last Updated: June 10, 2014
+
+Features:
+-Build custom tables of statistics for 8000+ US public traded equities
+-Add/remove companies/fields with ease
+-All fields are sortable using arrows
+
+
+Todo list:
+-weed out bad companies in AutoComplete list
+-add some tool-tip instructions
+-complete table CSS
+-weed out fields that aren't meaningful
+-add other fields (i.e. Beta stats)
+-ability to save session in cookies
+-incorporate value added fields derived from current fields
+-incorporate graphic/statistical analysis
+-think about how to how I want to warehouse data on which to start building predictive models
+-->
+<html>
+    <head>
+        <title>Red Unicorn Data Application v0.1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="RedUni_1.1_CSS.css" rel="stylesheet" type="text/css"/><link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css"/>
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css"/>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+        <script src="handlebars-1.1.2.js"></script>
+        <script src="ember-1.5.1.js"></script>
+        <script src="RedUni_1.1_JS.js"></script>
+        <script src="CompanySymbols.js"></script>
+    </head>
+    <body>
+        <div id='instructions'>
+            <p id='instructionText'>Use the input to add a companies of interest and use check-boxes to select desired fields.  Click <i>Update Table</i> button to update the table upon making new selections.  The red X next to each row destroys the row.  The arrows above each column control sorting.  -Chuck
+        </div>
+        <div id="AddCompanyContainer">
+            <div id="AddCompanyInputContainer" class="ui-autocomplete">
+                <label for="symbols">Enter symbol or company name:  </label><br>
+                <input id="symbols">
+            </div>
+            <div id="TableControl">
+                <div id="BuildTableBtn" onclick="TableObject.BuildTable();">Update Table</div>
+                
+            </div>
+            <div id="SelectFieldsContainer">
+                <span>Select fields: </span><br>
+                <div id="SelectFields">
+                    <div id ="fieldsColumn1"></div>
+                    <div id ="fieldsColumn2"></div>
+                    <div id ="fieldsColumn3"></div>
+                </div>
+            </div>
+        </div>
+        <div id="TableContainer">
+            <table id="DataTable">
+                <tbody id="TableBody"></tbody>
+            </table>
+        </div>
+    </body>
+</html>
